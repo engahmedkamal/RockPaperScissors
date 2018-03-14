@@ -9,7 +9,6 @@ import java.util.Random;
 
 public class GamePlayImpl implements GamePlay {
 
-    private Random randomShape = new Random();
 
     @Override
     public GameScore play(int rounds) {
@@ -19,6 +18,7 @@ public class GamePlayImpl implements GamePlay {
         Player playerB = new Player("Player B");
 
         Shape[] shapes = {Shape.Paper, Shape.Rock, Shape.Scissors};
+        Random randomShape = new Random();
 
         GameScore gameScore = new GameScore();
         GameService gameService = new GameServiceImpl();
@@ -35,9 +35,5 @@ public class GamePlayImpl implements GamePlay {
             }
         }
         return gameScore;
-    }
-
-    public void setRandomShape(Random randomShape) {
-        this.randomShape = randomShape;
     }
 }
