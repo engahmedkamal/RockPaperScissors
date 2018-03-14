@@ -1,7 +1,8 @@
 package service;
 
 import model.Player;
+import model.Winner;
 
 public interface GameService {
-    void play(Player player1, Player player2);
+    Winner judge(Player player1, Player player2);
 }
