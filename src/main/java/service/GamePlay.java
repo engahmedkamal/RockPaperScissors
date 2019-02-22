@@ -1,7 +1,9 @@
 package service;
 
-import model.GameScore;
+import model.enums.Shape;
 
 public interface GamePlay {
-    GameScore play(int rounds);
+    void play(Shape humanSelectedShape);
+
+    void announceWinner();
 }

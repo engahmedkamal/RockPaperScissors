@@ -1,10 +1,10 @@
 import model.Player;
-import model.Shape;
-import model.Winner;
+import model.enums.Shape;
+import model.enums.Winner;
 import org.junit.Before;
 import org.junit.Test;
 import service.GameService;
-import service.GameServiceImpl;
+import service.impl.GameServiceImpl;
 
 import static org.junit.Assert.assertTrue;
 
@@ -25,7 +25,7 @@ public class GameServiceTest {
         playerA.setShape(Shape.Paper);
         playerB.setShape(Shape.Scissors);
 
-        assertTrue(gameService.judge(playerA, playerB) == Winner.PlayerB);
+        assertTrue(gameService.judge(playerA, playerB) == Winner.PLAYER_B);
     }
 
     @Test
@@ -33,7 +33,7 @@ public class GameServiceTest {
         playerA.setShape(Shape.Paper);
         playerB.setShape(Shape.Rock);
 
-        assertTrue(gameService.judge(playerA, playerB) == Winner.PlayerA);
+        assertTrue(gameService.judge(playerA, playerB) == Winner.PLAYER_A);
     }
 
     @Test
@@ -41,7 +41,7 @@ public class GameServiceTest {
         playerA.setShape(Shape.Rock);
         playerB.setShape(Shape.Scissors);
 
-        assertTrue(gameService.judge(playerA, playerB) == Winner.PlayerA);
+        assertTrue(gameService.judge(playerA, playerB) == Winner.PLAYER_A);
     }
 
     @Test
@@ -49,6 +49,6 @@ public class GameServiceTest {
         playerA.setShape(Shape.Rock);
         playerB.setShape(Shape.Rock);
 
-        assertTrue(gameService.judge(playerA, playerB) == Winner.Tie);
+        assertTrue(gameService.judge(playerA, playerB) == Winner.TIE);
     }
 }
